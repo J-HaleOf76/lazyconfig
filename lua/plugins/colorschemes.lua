@@ -19,4 +19,8 @@ return {
       colorscheme = "gruvbox",
     },
   },
+  --Adding aurora
+  { "ray-x/aurora" },
+  -- Configure LazyVim to load Aurora colorscheme
+  { "LazyVim/LazyVim", opts = { colorscheme = "aurora" } },
 }
