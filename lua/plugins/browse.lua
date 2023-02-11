@@ -1,6 +1,15 @@
 require("browse").setup({
   -- search provider you want to use
   provider = "brave", -- duckduckgo, bing, google
+  cmd = {
+    "Browse",
+    "BrowseBookmarks",
+    "BrowseInputSearch",
+    "BrowseDevdocsSearch",
+    "BrowseDevdocsFiletypeSearch",
+    "BrowseMdnSearch",
+
+  },
 
   -- either pass it here or just pass the table to the functions
   -- see below for more
@@ -70,6 +79,6 @@ require("browse").setup({
   }, 
 )},
 
-vim.keymap.set("n", "<leader>B", function()
-    require("browse").browse({ bookmarks = bookmarks })
-  end)
+-- vim.keymap.set("n", "<leader>B",function()
+--     require("browse").browse({ bookmarks = bookmarks })
+--   end)
