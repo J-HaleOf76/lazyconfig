@@ -3,4 +3,5 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<leader>B", function()
   require("browse").browse({ bookmarks = bookmarks })
+  desc = "Browse all"
 end)
