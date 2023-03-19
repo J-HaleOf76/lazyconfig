@@ -1,4 +1,8 @@
 -- <pre style="word-wrap: break-word; white-space: pre-wrap;">
+if true then
+  return {}
+end
+
 -- local M = {
 --   dir = "~/Desktop/Github/browse.nvim",
 --   dev = true,
