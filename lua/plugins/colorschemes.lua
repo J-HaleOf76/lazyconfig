@@ -1,11 +1,6 @@
 -- I want to put all extra colorschemes in here if i can.
 return {
-  { "J-HaleOf76/neovim-ayu" },
-  { "LazyVim/LazyVim", opts = {
-    colorscheme = "ayu",
-  } },
   { "lunarvim/synthwave84.nvim" },
-
   {
     "LazyVim/LazyVim",
     opts = {
@@ -44,4 +39,20 @@ return {
       colorscheme = "catppuccin",
     },
   },
+
+  { "J-HaleOf76/neovim-ayu" }, -- ayu-dark
+  { "LazyVim/LazyVim", opts = {
+    colorscheme = "ayu",
+  } },
+  {
+    "projekt0n/github-nvim-theme",
+    tag = "v0.0.7",
+    -- or                            branch = '0.0.x'
+    config = function()
+      require("github-theme").setup({
+        theme_style = "dark",
+      })
+    end,
+  },
+  { "LazyVim/LazyVim", opts = { colorscheme = "github_dark" } },
 }
