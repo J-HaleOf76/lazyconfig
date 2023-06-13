@@ -160,6 +160,7 @@ return {
     },
   },
 
+  --  ----------------USE THIS EXTEND TO ADD TO THE CONFIGURATIONS------------------------------------------
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
   -- would overwrite `ensure_installed` with the new value.
   -- If you'd rather extend the default config, use the code below instead:
@@ -200,6 +201,7 @@ return {
   -- add jsonls and schemastore ans setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
 
+  -- --ADD TOOLS TO MASON --------------------
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",

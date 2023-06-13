@@ -51,7 +51,7 @@ return {
     -- end,
 
     opts = {
-      theme = "stars", --"snow",--"xmas", --"leaves", --"summer", --"spring" -- can be one of rhe default themes, or a custom theme
+      theme = "spring", --"snow",--"xmas", --"leaves", --"summer", --"spring" -- can be one of rhe default themes, or a custom theme
       max = 40, -- maximum number of drops on the screen
       interval = 150, -- every 150ms we update the drops
       screensaver = 1000 * 60 * 15, -- show after 5 minutes. Set to false, to disable
@@ -60,15 +60,16 @@ return {
   },
   -- Markdown preview in a flowting window.
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
-  --
-  -- {
-  --   "stevearc/aerial.nvim",
-  --   config = true,
-  --   --  config = function()
-  --   --   require("aerial").setup()
-  --   -- end,
-  --   -- opts({
-  --   --   {},
-  --   -- }),
-  -- },
+
+  -- MarkdownPreview in the browseer
+  {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+
+  { "nvim-treesitter/playground", cmd = "TSPlaygroundToggle" },
 }

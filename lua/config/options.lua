@@ -6,7 +6,9 @@ local opt = vim.opt
 
 opt.laststatus = 3
 
--- opt.scrollloff = 8
+-- This is new for Neovim9 - statuscolumn stc - Kinda Cool
+opt.statuscolumn = "%l %r"
+-- opt.statuscolumn = ""
 
 -- --[[ From the LunarVim Docs Configuration page. ]]
 -- vim.opt.backup = false -- creates a backup file
