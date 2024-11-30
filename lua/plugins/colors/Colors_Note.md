@@ -1,0 +1,40 @@
+# List the colorschemes bellow 
+
+1 arctic
+2 ayu
+3 bamboo
+4 base16
+5 blue-moon
+6 boo
+7 catppuccin
+8 everforest
+9 freyeday
+10 github-nvim-theme
+11 gruvbox-material
+12 gruvbox
+13 iceberg
+14 jellybeans
+15 kanagawa
+16 material
+17 mellifluous
+18 mellow
+19 miasma
+20 midnight
+21 modus
+22 monokai-pro
+23 moonfly
+24 moonwalk
+25 nano-theme
+26 nightfox
+27 nordic
+28 oak
+29 onedark
+30 oxocarbon
+31 rasmus
+32 rose-pine
+33 seoul
+34 serenity
+35 tokyonight
+36 vscode_modern
+37 zenbones
+
