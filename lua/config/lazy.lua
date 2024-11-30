@@ -28,8 +28,8 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.colors"},
-    { import = "plugins.Dev" },
-    { import = "plugins.UI"},
+    -- { import = "plugins.Dev" },
+    -- { import = "plugins.Themes"},
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -44,7 +44,8 @@ require("lazy").setup({
   -- Nov 18,2023
   dev = { path = "~/Dev_NeoVim/", -- "~/projects"
   patterns = {"JJH"}, -- Use local instead -- Any plugin with this prefix will be used as local.
-  fallback = false, --fall back to git when not installed
+  -- fallback = false, --fall back to git when not installed
+  fallback = true,
   },
 
   install = { colorscheme = { "tokyonight", "catppuccin", "habamax" } },

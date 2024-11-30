@@ -1,3 +1,6 @@
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                         Options                         │
+--          ╰─────────────────────────────────────────────────────────╯
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
@@ -34,7 +37,7 @@ local opt = vim.opt
 -- vim.opt.splitbelow = true -- force all horizontal splits to go below current window
 -- vim.opt.splitright = true -- force all vertical splits to go to the right of current window
 -- vim.opt.swapfile = false -- creates a swapfile
--- vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
+ vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 -- vim.opt.timeoutlen = 100 -- time to wait for a mapped sequence to complete (in milliseconds)
 -- vim.opt.title = true -- set the title of window to the value of the titlestring
 -- vim.opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
@@ -53,8 +56,8 @@ local opt = vim.opt
 -- vim.opt.wrap = false -- display lines as one long line
 -- vim.opt.spell = false
 -- vim.opt.spelllang = "en"
-vim.opt.scrolloff = 9 -- Keep the cursor on the page.
-vim.opt.sidescrolloff = 9
+vim.opt.scrolloff = 8 -- Keep the cursor on the page.
+vim.opt.sidescrolloff = 8
 --End of OLD config file from LunarVim
 --
 -- NOTE: Below is the new LazyVim Options file
@@ -66,7 +69,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Enable LazyVim auto format
-vim.g.autoformat = true
+-- vim.g.autoformat = true
 
 -- LazyVim root dir detection
 -- Each entry can be:
@@ -139,8 +142,10 @@ end
 vim.opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 
+-- Integrating Snacks
 if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+  -- vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+  vim.opt.statuscolumn = [[%!v:lua.require.Snacks.statuscolumn()]]
 end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
@@ -153,13 +158,23 @@ end
 
 vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 
+--HACK: This is from LazyVim site
+--TEST:
+--
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldnestmax = 1
+-- I set fondnextmax to 1 so only the top level functions are folded
+
+vim.opt.foldlevel = 99
+
 -- Fix markdown indentation settings
 -- vim.g.markdown_recommended_style = 0
 
 -- NeoVide Options
 if vim.g.neovide then
   vim.opt.guifont = { "FiraCode Nerd Font Mono:h12" }
-  vim.g.neovide_scale_factor = 0.3
+  vim.g.neovide_scale_factor = 0.8 --from 0.3 Needs tobe bigger
 end
 
 

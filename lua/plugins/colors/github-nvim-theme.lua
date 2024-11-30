@@ -6,6 +6,8 @@ local colorscheme = "github"
 
 local M = {
 	"projekt0n/github-nvim-theme",
+  tag = "v0.0.7",
+  -- Added the tag Feb 20,2024
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
@@ -19,9 +21,9 @@ M.supported_variants = {
 	"github_dark_high_contrast",
 	"github_dark_tritanopia",
 	"github_dimmed",
-	"github_light",
-	"github_light_colorblind",
-	"github_light_default",
+	-- "github_light",
+	-- "github_light_colorblind",
+	-- "github_light_default",
 	"github_light_high_contrast",
 }
 M.default_variant = "github_dark"
@@ -48,7 +50,7 @@ function M.config()
 				floats = true,
 				sidebars = {
 					enabled = true,
-					list = { "neo-tree", "term", "toggle-term" },
+					list = { "edgy", "neo-tree", "term", "toggle-term" },
 				},
 			},
 		},

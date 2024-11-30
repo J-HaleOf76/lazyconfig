@@ -1,3 +1,8 @@
+-- Author: JJH
+-- Date: Feb 15, 2024
+--
+-- Adding opts = {} To see what happens.will this work?
+--
 -- matching slack theme:
 -- #1E1E2E,#272C33,#1E1E2E,#CDD6F4,#585B70,#CDD6F4,#A6E3A1,#89B4FA,#1E1E2E,#CDD6F4
 
@@ -28,6 +33,7 @@ M.config = function()
 	require("catppuccin").setup({
 		flavour = themer.variant(M), -- latte, frappe, macchiato, mocha
 		transparent_background = config.transparent,
+    opts = {
 		show_end_of_buffer = false,
 		term_colors = true,
 		background = { -- :h background
@@ -64,6 +70,7 @@ M.config = function()
 			treesitter = true,
 			which_key = true,
 		},
+    },
 	})
 
 	-- setup must be called before loading

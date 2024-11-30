@@ -24,7 +24,7 @@ M.config = function()
 	require("mellifluous").setup({
 		mellifluous = {
 			neutral = true, -- set this to false and bg_contrast to 'medium' for original mellifluous (then it was called meliora theme)
-			bg_contrast = "medium", -- options: 'soft', 'medium', 'hard'
+			bg_contrast = "hard", -- I switched from medium - options: 'soft', 'medium', 'hard'
 		},
 		color_set = themer.variant(M),
 	})

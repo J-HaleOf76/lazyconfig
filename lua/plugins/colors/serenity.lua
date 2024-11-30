@@ -1,3 +1,8 @@
+-- if true then
+--   return{}
+-- end
+
+-- Ugly and giving issues
 -- JJH
 local config = require("config")
 local themer = require("themer")
@@ -9,11 +14,12 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  enabled = false,
 }
 
-M.palette = {
-	black = "#000000",
-}
+-- M.palette = {
+-- 	black = "#000000",
+-- }
 
 M.config = function()
 	if config.colorscheme ~= "serenity" then

@@ -9,6 +9,7 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  enabled = false,
 }
 
 M.config = function()

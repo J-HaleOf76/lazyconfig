@@ -7,6 +7,7 @@
 
 ## HelpTags from headings in markdown README's inside "lua/\*\*/"
 
+- Read HelpNotes.md
 - :help #'What To Look For'
 - I can make my own help notes system for whatever I need too
 
@@ -24,7 +25,7 @@
 
 ## " Glow ", " markdown-preview "
 
-- Glow is good
+- Glow is good - Glow is now in LazyExtras
 - markdown preview is cooked in now per LazyExtras - NO need for my own plugin \*
 
 ---

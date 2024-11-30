@@ -1,3 +1,6 @@
+-- if true then
+--   return{}
+-- end
 -- JJH
 local config = require("config")
 local utils = require("utils")
@@ -10,6 +13,7 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  enabled = true,
 }
 
 M.config = function()

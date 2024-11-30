@@ -1,3 +1,5 @@
+-- Added opts enabled false instead of it getting removed from the system
+--It wont install
 local config = require("config")
 local themer = require("themer")
 
@@ -11,6 +13,7 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  -- enabled = false,
 }
 
 function M.config()

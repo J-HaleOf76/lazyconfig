@@ -1,9 +1,10 @@
--- if true then
---   return{}
--- end
+if true then
+  return{}
+end
 
 --Author: JJH
---Date: Jan 16,2024
+--Date: July 28,2024
+--which-key has changed But I don't use this at all.
 --
 --TODO: Setup with my DevDocs, MDN and Bookmarks
 
@@ -13,6 +14,7 @@ return{
   "lalitmee/browse.nvim",
   dependencies = { "stevearc/dressing.nvim", event = "VeryLazy" },
     event = "VeryLazy",
+    enabled = "false",
     opts = {
       cmd = {
         "Browse",
@@ -27,23 +29,26 @@ return{
             local bookmarks = {
                 ["docs"] = {
                     ["name"] = "docs for everything",
-                    ["cargo"] = "https://doc.rust-lang.org/cargo/index.html?search=%s",
+                    -- ["cargo"] = "https://doc.rust-lang.org/cargo/index.html?search=%s",
                     ["devdocs.io"] = "https://devdocs.io/search?q=%s",
                     ["learnxinyminutes"] = "https://learnxinyminutes.com/docs/%s",
                     ["mdn"] = "https://developer.mozilla.org/search?q=%s",
                     -- ["rust:core"] = "https://doc.rust-lang.org/core/?search=%s",
                     -- ["rust:std"] = "https://doc.rust-lang.org/std/?search=%s",
                 },
-                ["work"] = {
-                    ["name"] = "work related",
-                    ["github_pulls"] = "https://github.com/pulls",
-                    ["mui"] = "https://mui.com/",
-                    ["mui-icons"] = "https://mui.com/components/material-icons/#material-icons",
-                    ["v4-mui"] = "https://v4.mui.com/",
-                    ["npm_search"] = "https://npmjs.com/search?q=%s",
-                },
+                -- ["work"] = {
+                --     ["name"] = "work related",
+                --     ["github_pulls"] = "https://github.com/pulls",
+                --     ["mui"] = "https://mui.com/",
+                --     ["mui-icons"] = "https://mui.com/components/material-icons/#material-icons",
+                --     ["v4-mui"] = "https://v4.mui.com/",
+                --     ["npm_search"] = "https://npmjs.com/search?q=%s",
+                -- },
                 ["JJH"] = {
                     ["name"] = "personal repositories",
+                    ["GitHub"] = "https://github.com/J-HaleOf76/",
+                    ["Local_Dev_Nvim"] = "//home/john/Dev_NeoVim/",
+                    ["Scripts"] = "~/Scripts/homepage.py",
                     ["browse.nvim"] = "https://github.com/J-HaleOf76/browse.nvim",
                     ["cobalt2.nvim"] = "https://github.com/lalitmee/cobalt2.nvim",
                     -- ["dNotes"] = "https://github.com/lalitmee/dNotes",
@@ -88,58 +93,66 @@ return{
         end,
         init = function()
             local wk = require("which-key")
-            wk.register({
-                ["s"] = {
-                    ["B"] = {
-                        function()
-                            require("browse").browse()
-                        end,
-                        "browse",
-                    },
-                    -- ["c"] = {
-                    --     function()
-                    --         require("utils.cht").cht()
-                    --     end,
-                    --     "cheatsheet",
-                    -- },
-                    ["D"] = {
-                        function()
-                            require("browse").devdocs.search()
-                        end,
-                        "devdocs-search",
-                    },
-                    ["f"] = {
-                        function()
-                            require("browse").devdocs.search_with_filetype()
-                        end,
-                        "devdocs-filetype-search",
-                    },
-                    ["i"] = {
-                        function()
-                            require("browse").input_search()
-                        end,
-                        "input-search",
-                    },
-                    ["l"] = {
-                        function()
-                            require("browse").open_bookmarks()
-                        end,
-                        "bookmarks",
-                    },
-                    ["m"] = {
-                        function()
-                            require("browse").mdn.search()
-                        end,
-                        "mdn-search",
-                    },
-                    -- ["s"] = {
-                    --     function()
-                    --         require("utils.cht").stack_overflow()
-                    --     end,
-                    --     "stackoverflow",
-                    -- },
-                },
-            }, { mode = "n", prefix = "<leader>" })
+  -- {
+  --   { "<leader>sB", <function 1>, desc = "browse" },
+  --   { "<leader>sD", <function 1>, desc = "devdocs-search" },
+  --   { "<leader>sf", <function 1>, desc = "devdocs-filetype-search" },
+  --   { "<leader>si", <function 1>, desc = "input-search" },
+  --   { "<leader>sl", <function 1>, desc = "bookmarks" },
+  --   { "<leader>sm", <function 1>, desc = "mdn-search" },
+  -- }
+            -- wk.register({
+            --     ["s"] = {
+            --         ["B"] = {
+            --             function()
+            --                 require("browse").browse()
+            --             end,
+            --             "browse",
+            --         },
+            --         -- ["c"] = {
+            --         --     function()
+            --         --         require("utils.cht").cht()
+            --         --     end,
+            --         --     "cheatsheet",
+            --         -- },
+            --         ["D"] = {
+            --             function()
+            --                 require("browse").devdocs.search()
+            --             end,
+            --             "devdocs-search",
+            --         },
+            --         ["f"] = {
+            --             function()
+            --                 require("browse").devdocs.search_with_filetype()
+            --             end,
+            --             "devdocs-filetype-search",
+            --         },
+            --         ["i"] = {
+            --             function()
+            --                 require("browse").input_search()
+            --             end,
+            --             "input-search",
+            --         },
+            --         ["l"] = {
+            --             function()
+            --                 require("browse").open_bookmarks()
+            --             end,
+            --             "bookmarks",
+            --         },
+            --         ["m"] = {
+            --             function()
+            --                 require("browse").mdn.search()
+            --             end,
+            --             "mdn-search",
+            --         },
+            --         -- ["s"] = {
+            --         --     function()
+            --         --         require("utils.cht").stack_overflow()
+            --         --     end,
+            --         --     "stackoverflow",
+            --         -- },
+            --     },
+            -- }, { mode = "n", prefix = "<leader>" })
         end,
     },
 }

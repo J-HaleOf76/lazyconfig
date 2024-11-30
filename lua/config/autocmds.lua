@@ -1,3 +1,9 @@
+-- Author: JJH
+-- Date: March 29,2024
+-- Edits: All clear on the homefront
+--
+-- NOTE: Get rid of Legendary
+--
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
@@ -19,17 +25,36 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
---FIX:Add a description. desc = "ColorScheme Picker"
---  I still need the keymap set - Legendary might be a good fit for this.
+--TODO: Folding and the commands
+-- From the LazyVim recipes
+--
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local save_fold = augroup("Persistent Folds", { clear = true })
+
+autocmd("BufWinLeave", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.mkview()
+  end,
+  group = save_fold,
+})
+autocmd("BufWinEnter", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.loadview({ mods = { emsg_silent = true } })
+  end,
+  group = save_fold,
+})
 --
 -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- Make the autocommand for the User Event 'ColorSchemeLoad'
-vim.api.nvim_create_autocmd("User", {
-  pattern = "ColorSchemeLoad",
-  callback = function()
-    require("telescope.builtin").colorscheme()
-  end,
-})
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "ColorSchemeLoad",
+--   callback = function()
+--     require("telescope.builtin").colorscheme() desc = "ColorScheme Cust Pick"
+--   end,
+-- })
 
 -- colorscheme picker with Telescope
 -- {
@@ -40,16 +65,6 @@ vim.api.nvim_create_autocmd("User", {
 --     end,
 --     noremap = true,
 -- }
-
- -- {
- --      "<Leader>uu",
- --      function()
- --          vim.api.nvim_exec_autocmds("User", { pattern = "ColorSchemeLoad" })
- --          require("telescope.builtin").colorscheme()
- --      end,
- --      noremap = true,
- --  }
-
 --
 -- This goes at the bottom of the Alpha config
 -- Every new tab opened show Alpha

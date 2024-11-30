@@ -1,4 +1,10 @@
+-- if true then
+--   return{}
+-- end
+-- Trying enabled false instead of it getting removed
+
 local config = require("config")
+
 local utils = require("utils")
 local themer = require("themer")
 
@@ -9,6 +15,8 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  enabled = false,
+  -- dev = true,
 }
 
 function M.config()

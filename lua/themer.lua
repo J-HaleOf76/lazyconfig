@@ -1,17 +1,39 @@
---FIX: Going to try and put all of these parts outside of the plugin and config folders
---Fix utils require file path.
+---@diagnostic disable: duplicate-set-field
+--[[
+--Author: JJH
+--Date: Nov 28, 2024
+--Edits: USE the favs for selection of themes.
+-- Tighten this up.
+-- I can make another module just like favourites and put base16,neopywal in there and only
+-- call it with a new keymap.
 --
---TEST: Move files outside
+-- - Base16 will still show up in the main colorschemes picker. uC
+--  - It shows too many themes in the picker.
+-- HACK: NO Just add keymap to the base16 config file.
+-- NOTE: In the favs function base16 is excluded from the results returned.
+--  - But Not excluded from the normal keymap call for the colorschemes.
 --
+-- FIXME: This NO work with fzf-lua - This function make a call to telescope
+-- I fixed this by getting rid of fzf-lua And back to telescope
 --
---NOTE: Pay attention to the requires paths
---All of the themes have the same requires as config and utils, themer
+--]]--
+--
+--FIX: Don't ruin this file.
+--I Should have this under souce controll So that I can easily see the changes made.
+--
 --
 local utils = require("utils")
 local config = require("config")
 local M = {
-	favourites = { "tokyonight", "catppuccin", "rose-pine", "fox" },
+	favourites = {
+   "tokyonight", "catppuccin", "ayu",
+    "neopywal", "github",
+  "kanagawa","arctic","iceberg",
+    "synthwave84",
+  },
+
 }
+
 
 M.variant = function(context)
 	if not utils.contains(context.supported_variants, config.variant) then
@@ -43,22 +65,24 @@ M.keys = function(colorscheme)
 				function()
 					require("telescope.builtin").colorscheme({ enable_preview = true })
 				end,
-				desc = "Colorscheme with preview",
+				desc = "Colorschemes Preview",
 			},
 			{
 				"<leader>cx",
 				function()
 					require("themer").favourite_themes_picker()
 				end,
-				desc = "Fave themes picker",
+				desc = "Fav_Themes_Picker",
 			},
+
 		}
 	else
 		return {}
 	end
 end
 
---NOTE: This can be added to So that some of the builtin themes do not showup
+--NOTE: Just Use this for my themes.
+--    - NO builtins get called to load.
 --
 M.favourite_themes_picker = function()
 	local target = vim.fn.getcompletion
@@ -68,6 +92,7 @@ M.favourite_themes_picker = function()
 			return vim.tbl_contains(M.favourites, function(c)
 				return string.find(color, c) and not (string.find(color, "base16"))
 			end, { predicate = true })
+---@diagnostic disable-next-line: redundant-parameter
 		end, target("", "color"))
 	end
 

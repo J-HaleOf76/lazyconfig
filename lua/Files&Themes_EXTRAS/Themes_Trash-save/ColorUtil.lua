@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 if true then
   return{}
 end
@@ -14,6 +15,8 @@ end
 --FIX: This file is just sitting here as is.
 -- Useless without a color file to compare to 
 -- what is M.keys() ?  What is the keys refering to
+-- " color " I think is a global command for colorscheme
+-- " "
 --
 --]]
 
@@ -28,7 +31,7 @@ function M.keys()
   local builtins = { "zellner", "torte", "slate", "shine", "ron", "quiet", "peachpuff",
   "pablo", "murphy", "evening", "elflord",
   "desert", "delek", "blue" }
-  --Saved "koehler" "default" "darkblue" "" "lunaperche", "koehler", "industry",
+  --Saved "vim" "koehler" "default" "darkblue" "" "lunaperche", "koehler", "industry",
 
   return {
     {

@@ -1,3 +1,8 @@
+if true then
+  return{}
+end
+" This has a random colorscheme change function at the bottom
+"
 """ ---- Color schemes ----
 
 let s:colors=[

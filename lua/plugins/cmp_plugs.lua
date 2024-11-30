@@ -4,16 +4,6 @@
 
 return {
 
-  -- {
- -- FIX: I don't think that I need this install.
-  --
-  -- --   "tzachar/cmp-tabnine",
-  --   build = "./install.sh",
-  --   dependencies = "hrsh7th/nvim-cmp",
-  --   event = "nvim-cmp",
-  --   -- event = "VeryLazy",
-  --   -- event = "InsertEnter", -- From LunarVim
-  -- },
 
   -- override nvim-cmp and add cmp-tabnine
   {

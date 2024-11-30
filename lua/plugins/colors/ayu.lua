@@ -25,7 +25,7 @@ M.config = function()
 	require("ayu").setup({
 		mirage = false,
 		overrides = {
-			["@symbol"] = { fg = colors.tag },
+			-- ["@symbol"] = { fg = colors.tag },
 			-- Normal = { bg = "None" },
 			-- ColorColumn = { bg = "None" },
 			-- SignColumn = { bg = "None" },

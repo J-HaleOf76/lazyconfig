@@ -1,31 +1,45 @@
 --[[ This is where I set the colorscheme ]]--
+--TODO: Make a wallust theme and save.
 --
---NOTE: It works now
---This can't be the best way of setting this up.
---This might be a fallback for the themer.
---Set this to something great and go from there.
---I can't remember all of the themes and variants.
+-- NeoPywal has several theme builtin and more that it can apply in the config.
 --
 --
+
+--Set the main theme here
 return {
-	-- colorscheme = "nightfox",
-	-- variant = "terafox",
-  -- colorscheme = "oxocarbon",
-  -- variant = "",
-  colorscheme = "rose-pine",
-  variant = "main",
+  -- colorscheme = "tokyodark",
+  -- colorscheme = "tokyo-dark-terminal",
+  -- colorscheme = "base16-tokyodark",
+  -- colorscheme = "tokyonight-night",
+   -- colorscheme = "base16-3024",
+  -- colorscheme = "tokyonight",
+  -- colorscheme = "rose-pine",
+  -- variant = "main",
+    colorscheme = "catppuccin",
+    variant = "mocha",
   -- colorscheme = "kanagawa",
-  -- variant = "",
+  -- variant = "dragon",
+  -- TODO: SAVE SOME OF THESE PYWAL & WALLUST THEMES To be used with the rest of WALLUST OR PYWAL
+  -- Rose-Pine Kanagawa Tokyo-Dark-Terminal TokyoNight-Night
+  --
+  -- NeoPywal has other builtin themes
+  -- colorscheme = "neopywal",
+  -- variant = "dark",
+  --
+  -- variant = "dark",
 	transparent = false,
-	-- filemanager = "oil", -- supported: mini.files, oil, neo-tree
+  --[[TODO: Where do these other calls come from? ]]--
+  --
+	-- filemanager = "neo-tree", -- supported: mini.files, oil, neo-tree
 	-- keymapper = "which-key", -- supported: mini.clue, which-key
-	-- journal_dir = os.getenv("HOME") .. "/iCloud-Obsidian/work/dailies/",
-	startup = {
-		show_diagnostics = true,
-		show_git_blame = false,
-	},
+	-- journal_dir = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
+	notes = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
+	-- startup = {
+	-- 	show_diagnostics = true,
+	-- 	show_git_blame = false,
+	-- },
 	-- integrations = {
-	-- 	obsidian = {
+	-- 	notes = {
 	-- 		enabled = true,
 	-- 	},
 	-- },

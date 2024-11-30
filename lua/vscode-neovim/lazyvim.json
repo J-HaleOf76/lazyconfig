@@ -1,4 +1,3 @@
--- I deleted the bottom 2 lines that I must have forced in there
 {
   "extras": [
     "lazyvim.plugins.extras.coding.tabnine",

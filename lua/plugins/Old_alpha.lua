@@ -3,7 +3,6 @@ if true then
 end
 
 --NOTE: Dashboard is the new Home for now.
--- Focus on a more personal home page for yourself
 --
 
 return {

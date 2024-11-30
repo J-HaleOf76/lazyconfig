@@ -8,6 +8,7 @@ local M = {
 	lazy = themer.lazy_load(colorscheme),
 	priority = themer.priority_for(colorscheme),
 	keys = themer.keys(colorscheme),
+  enabled = false,
 }
 
 -- FIXME wtf?!
@@ -41,6 +42,7 @@ M.config = function()
 	-- to the statusline and whichkey
 	local colorscheme = "gruvbox"
 	local colors = require("user.colors.gruvbox_colors")
+	--This is what that odd gruvbox file is for.
 
 	local function set_colors(fg, bg)
 		return "guifg=" .. fg .. " guibg=" .. bg

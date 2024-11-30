@@ -1,4 +1,8 @@
+--Author: JJH
+--Date: March 29, 2024
+--
 --[[ Add modules to treesitter here. ]]
+-- TSInstall
 return {
   -- {
   --   "nvim-treesitter/nvim-treesitter",

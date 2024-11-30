@@ -11,8 +11,8 @@ Plugin: ron-rs for LeftWM themes
 return {
 
   { "ron-rs/ron.vim",
-    dir = "~/Dev_NeoVim/ron.vim",
-    dev = true,
+    -- dir = "~/Dev_NeoVim/ron.vim",
+    -- dev = true,
     lazy = true,
     event = "VeryLazy",
     filetypes = { ".ron" },

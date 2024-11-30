@@ -4,6 +4,9 @@
 --
 -- [[ Colorizer ]]
 --
+-- NOTE: June 25,2024 - commented out sass in the opts.It's throwing an error ??? ' error executing vim.schedule lua callback:'
+-- It's having a stack overflow :)
+--
 return {
 
   {
@@ -28,7 +31,7 @@ return {
          -- Available methods are false / true / "normal" / "lsp" / "both"
 	        -- True is same as normal
         -- tailwind = "both", -- Enable tailwind colors
-        sass = { enable = true, parsers = { css }, },-- Enable sass colors
+        -- sass = { enable = true, parsers = { css }, },-- Enable sass colors
         virtualtext = "■",
         -- Update color values even if the buffer is not focused
         always_update = true,

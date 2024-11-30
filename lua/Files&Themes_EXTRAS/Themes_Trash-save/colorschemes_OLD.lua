@@ -1,3 +1,6 @@
+if true then
+  return{}
+end
 -- Author:JJH
 -- Date:Feb 3, 2024
 -- Feb 2 2024
@@ -160,7 +163,7 @@ return {
     -- or                            branch = '0.0.x'
     branch = '0.0.x',
     -- event = "VeryLazy",
-    event = "User ColorSchemeLoad",
+    -- event = "User ColorSchemeLoad",
     -- lazy = true,
     -- enabled = false,
     -- dev = true,

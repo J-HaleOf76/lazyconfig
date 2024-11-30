@@ -1,4 +1,9 @@
+if true then
+  return {}
+end
+
 --[[ This is just a list of themes for the Installation. Their config files will be seperate ]]--
+--
 
 return {
     {

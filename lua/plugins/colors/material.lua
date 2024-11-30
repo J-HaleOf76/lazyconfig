@@ -25,7 +25,7 @@ M.config = function()
 			floating_windows = true, -- Enable contrast for floating windows
 			line_numbers = false, -- Enable contrast background for line numbers
 			sign_column = false, -- Enable contrast background for the sign column
-			cursor_line = false, -- Enable darker background for the cursor line
+			cursor_line = true, -- Enable darker background for the cursor line
 			non_current_windows = false, -- Enable darker background for non-current windows
 			popup_menu = true, -- Enable lighter background for the popup menu
 		},
@@ -42,11 +42,12 @@ M.config = function()
 			"qf", -- Darker qf list background
 			"neo-tree",
 			"neo-tree-popup",
+      "edgy",
 		},
 
 		high_visibility = {
 			lighter = false, -- Enable higher contrast text for lighter style
-			darker = false, -- Enable higher contrast text for darker style
+			darker = true, -- Enable higher contrast text for darker style
 		},
 
 		disable = {

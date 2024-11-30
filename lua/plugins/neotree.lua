@@ -1,10 +1,7 @@
--- if true then
---     return {}
--- end
---
 -- Name: John Hale
--- Date: Jan 24, 2024
--- Edits:Got rid of some extra comments
+-- Date: Feb 21, 2024
+-- Edits: Added the filesystem keymap for " l "
+-- NOTE: Contains: Diff config function. - h left - l right. - <leader>\ image_wezterm
 --
 --
 
@@ -19,18 +16,9 @@
     - Just an example
     :Neotree action=show source=filesystem position=right toggle=true
     nnoremap <leader>| :Neotree toggle show image_wezterm right<cr>
+    - Leader pipe is split right
 
---]]
-----[[  -- prevent neo-tree from opening files in edgy windows
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   optional = true,
-  --   opts = {
-  --     open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy" },
-  --   },
-  -- },  ]]
---
---
+--]]--
 -- -- :lua require("neo-tree").paste_default_config()
 --
 return {
@@ -38,14 +26,14 @@ return {
 
     opts = {
       source_selector = {
-        winbar = true,
+        winbar = false,
         statusline = true,
         show_scrolled_off_parent_node = false,
 
     sources = {
       { source = "filesystem" },
       { source = "buffers" },
-      { source = "git_status" },
+      -- { source = "git_status" },
       { source = "document_symbols" },
     },
       --  FIX: Icons
@@ -70,6 +58,35 @@ return {
 
       -- Global commands
       commands = {
+
+        diff_files = function(state)
+            local node = state.tree:get_node()
+            local log = require("neo-tree.log")
+            state.clipboard = state.clipboard or {}
+            if diff_Node and diff_Node ~= tostring(node.id) then
+              local current_Diff = node.id
+              require("neo-tree.utils").open_file(state, diff_Node, open)
+              vim.cmd("vert diffs " .. current_Diff)
+              log.info("Diffing " .. diff_Name .. " against " .. node.name)
+              diff_Node = nil
+              current_Diff = nil
+              state.clipboard = {}
+              require("neo-tree.ui.renderer").redraw(state)
+            else
+              local existing = state.clipboard[node.id]
+              if existing and existing.action == "diff" then
+                state.clipboard[node.id] = nil
+                diff_Node = nil
+                require("neo-tree.ui.renderer").redraw(state)
+              else
+                state.clipboard[node.id] = { action = "diff", node = node }
+                diff_Name = state.clipboard[node.id].node.name
+                diff_Node = tostring(state.clipboard[node.id].node.id)
+                log.info("Diff source file " .. diff_Name)
+                require("neo-tree.ui.renderer").redraw(state)
+              end
+            end
+          end,
 
         image_wezterm = function(state)
           local node = state.tree:get_node()
@@ -100,10 +117,13 @@ return {
 
       window = {
         mappings = {
-
-          ["<leader>P"] = "image_wezterm", -- Might need renamed
-          ["L"] = "focus_preview",
-
+          ['D'] = "diff_files",
+          -- ["<leader>P"] = "image_wezterm", -- Might need renamed
+        -- TEST: If leader o will conflict with other mappings
+        -- THIS MIGHT BE A GOOD CASE FOR * LEGENDARY *
+        --
+        ["<leader>\\"] = "image_wezterm",
+          -- ["L"] = "focus_preview",
 					["<space>"] = "none",
           ["v"] = "open_vsplit",
           ["h"] = "h",
@@ -158,13 +178,13 @@ return {
           hide_by_name = {
             ".DS_Store",
            "thumbs.db",
-            "node_modules",
-            "go",
-            ".cache",
+          --   "node_modules",
+          --   "go",
+          --   ".cache",
             ".quokka",
-            ".node",
-            ".nvm",
-            ".npm",
+          --   ".node",
+          --   ".nvm",
+          --   ".npm",
             ".js-repl",
             ".pki",
             ".pnpm-store",
@@ -262,26 +282,28 @@ return {
           --     require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
           --   end
           -- end,
-          -- ["l"] = function(state)
-          --   local node = state.tree:get_node()
-          --   if node.type == "directory" then
-          --     if not node:is_expanded() then
-          --       require("neo-tree.sources.filesystem").toggle_directory(state, node)
-          --     elseif node:has_children() then
-          --       require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
-          --     end
-          --   end
-          -- end,
+          ["l"] = function(state)
+            local node = state.tree:get_node()
+            if node.type == "directory" then
+              if not node:is_expanded() then
+                require("neo-tree.sources.filesystem").toggle_directory(state, node)
+              elseif node:has_children() then
+                require("neo-tree.ui.renderer").focus_node(state, node:get_child_ids()[1])
+              end
+            end
+          end,
         },
         window = {
           mappings = {
-            ["L"] = "focus_preview",
+            -- ["L"] = "focus_preview",
 
 					["<space>"] = "none",
             ["v"] = "open_vsplit",
             ["h"] = "h",
             ["l"] = "l",
-            ["<leader>P"] = "image_wezterm", -- image_preview is the function that gets called for this.
+            ["D"] = "diff_files",
+            ["<leader>\\"] = "image_wezterm",
+            -- ["<leader>P"] = "image_wezterm", -- image_preview is the function that gets called for this.
             -- I want find to work like it does everywhere else.
             -- ["/"] = "fuzzy_finder", -- Searches root
               -- ["D"] = "fuzzy_finder_directory", --This only searches for directories

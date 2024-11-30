@@ -15,7 +15,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-emoji",
       "tzachar/cmp-tabnine",
-      -- "cmp_nerdfont",
+      "chrisgrieser/cmp-nerdfont",
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
