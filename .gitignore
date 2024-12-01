@@ -6,3 +6,12 @@ debug
 foo.*
 *.log
 data
+lua/Files&Themes_EXTRAS
+.vscode
+Removed-Plugins&Files
+lua/plugins/My_devfiles
+Colors_Notes.md
+Extras_NOTES.md
+VCS-snips-export_9-12-2023-
+config-notes.md
+
