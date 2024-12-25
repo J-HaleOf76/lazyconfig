@@ -10,9 +10,6 @@ end
   Date: Oct 1, 2023
   Tabnine-nvim 
 
-TODO: make this a local "dev" plugin with lazy. The files should be in "./local/share/nvim/"
- Leave this bee for now. I have the cmp plugin.
-
 ]]
 
 -- return {

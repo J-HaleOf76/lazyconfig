@@ -48,9 +48,9 @@ require("neopywal").setup({
     -- use_palette = "monokaipro",
     -- use_palette = "oceanic-next",
     -- use_palette = "palenight",
-    -- use_palette = "material-darker",
+    use_palette = "material-darker",
       -- use_palette = "material-palenight",
-    use_palette = "material-ocean",
+    -- use_palette = "material-ocean",
     -- use_palette = "material",
     -- use_palette = "sonokai",
 

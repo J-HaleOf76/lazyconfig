@@ -44,6 +44,7 @@ dashboard = {
     },
     { section = "startup" },
   },
+      { cmd="dash"},
 }, -- dash end
   }, -- opts end
   }-- END

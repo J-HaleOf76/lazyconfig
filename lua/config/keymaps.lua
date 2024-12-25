@@ -10,24 +10,25 @@
 --
 -- This is the 1 that worked first
  -- vim.keymap.set("n", "<leader>;", "<cmd>Alpha<cr>", { desc = "Home" })
+-- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:Alpha<cr>", { desc = "Alpha_Home" })
 
--- vim.keymap.set("n", "<leader>;", "<cmd>Dashboard<cr>", { desc = "GoTo Home" })
+-- vim.keymap.set("n", "<leader>;", "<cmd>Snacks_Dashboard<cr>", { desc = "GoTo Home" })
+vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>Snacks.dashboard()<cr>", { desc = "Home" })
 
 -- This also works fine
- -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:Alpha<cr>", { desc = "Alpha_Home" })
- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:lua Snacks.dashboard()<cr>", { desc = "HomePage" })
- vim.api.nvim_set_keymap("n", "<leader>*", "<cmd>:snacks_dashboard<cr>", { desc = "HomeTest" })
+-- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:Alpha<cr>", { desc = "Alpha_Home" })
+-- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:lua Snacks.dashboard()<cr>", { desc = "HomePage" })
+--
+vim.api.nvim_set_keymap("n", "<leader>*", "<cmd>Snacks.dashboard<cr>", { desc = "HomeTest" })
 --
 -- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>"),
 --
--- playin with Neotree to get images to show in a window
--- TODO: Edgy popup window for images
---
-    -- nnoremap <leader>| :Neotree toggle show image_wezterm right<cr>
-  -- This also looks like LocalLeader
+-- nnoremap <leader>| :Neotree toggle show image_wezterm right<cr>
+-- This also looks like LocalLeader
 vim.keymap.set("n", "<leader>\\", "<cmd>Neotree toggle show image_wezterm right<cr>", { desc = "Image_Wezterm" })
 
-vim.api.nvim_set_keymap("n", "<leader>P", "<cmd>:glow<cr>", { desc = "Glow" })
+-- Need to make this open in a split window
+-- vim.api.nvim_set_keymap("n", "<leader>P", "<cmd>:glow<cr>", { desc = "Glow" })
 
 -- This is an autocomand to load the colorshemes - keys = {} -
 -- {
@@ -64,31 +65,7 @@ vim.keymap.set('t', '<C-v>', '<C-\\><C-N>pi', { noremap = true, desc = 'Paste' }
 vim.keymap.set('', '<A-q>', vim.cmd.tabclose, { noremap = true, desc = 'Close current tab' })
 vim.keymap.set({ 'i', 't' }, '<A-q>', '<Esc><Cmd>tabclose<CR>', { noremap = true, desc = 'Close current tab' })
 --
---
---          +---------------------------------------------------------+
---          |                       Comment box                       |
---          +---------------------------------------------------------+
--- I moved this into box-comment configuration
-
--- local wk = require("which-key")
---
--- wk.register({
---   ["<Leader>"] = {
---     C = {
---       name = " □  Boxes",
---       b = { "<Cmd>CBccbox<CR>", "Box Title" },
---       B = { "<Cmd>CBccbox10<CR>", "ASCII Box Title" },
---       t = { "<Cmd>CBllline<CR>", "Titled Line" },
---       T = { "<Cmd>CBlcline17<CR>", "Titled C Line" },
---       l = { "<Cmd>CBline<CR>", "Simple Line" },
---       m = { "<Cmd>CBllbox14<CR>", "Marked" },
---       d = { "<Cmd>CBd<CR>", "Remove a box" },
---     },
---   },
--- })
---
---
-  -- Suggested Spec: - These might need to be registered with wk like above.
+-- CommentBox
 local wk = require("which-key")
 
 wk.add(
@@ -103,3 +80,8 @@ wk.add(
     { "<Leader>Ct", "<Cmd>CBllline<CR>", desc = "Titled Line" },
   }
 )
+--
+--
+vim.keymap.set("n", "<leader>N", function()
+  require("util.notepad").launch_notepad()
+end, { desc = "Toggle Notepad" })

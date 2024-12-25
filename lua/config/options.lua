@@ -143,38 +143,39 @@ vim.opt.foldlevel = 99
 vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 
 -- Integrating Snacks
-if vim.fn.has("nvim-0.9.0") == 1 then
-  -- vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
-  vim.opt.statuscolumn = [[%!v:lua.require.Snacks.statuscolumn()]]
-end
+-- if vim.fn.has("nvim-0.9.0") == 1 then
+--   -- vim.opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
+--   vim.opt.statuscolumn = [[%!v:lua.require.Snacks.statuscolumn()]]
+-- end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now
-if vim.fn.has("nvim-0.10") == 1 then
-  vim.opt.foldmethod = "expr"
-  vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-else
-  vim.opt.foldmethod = "indent"
-end
-
-vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+-- if vim.fn.has("nvim-0.10") == 1 then
+--   vim.opt.foldmethod = "expr"
+--   vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+-- else
+--   vim.opt.foldmethod = "indent"
+-- end
+--
+-- vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 
 --HACK: This is from LazyVim site
 --TEST:
 --
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldmethod = "expr"
-vim.opt.foldnestmax = 1
--- I set fondnextmax to 1 so only the top level functions are folded
-
-vim.opt.foldlevel = 99
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldnestmax = 1
+-- -- I set fondnextmax to 1 so only the top level functions are folded
+--
+-- vim.opt.foldlevel = 99
 
 -- Fix markdown indentation settings
 -- vim.g.markdown_recommended_style = 0
 
 -- NeoVide Options
-if vim.g.neovide then
-  vim.opt.guifont = { "FiraCode Nerd Font Mono:h12" }
-  vim.g.neovide_scale_factor = 0.8 --from 0.3 Needs tobe bigger
-end
+-- Moved into the main init lua
+-- if vim.g.neovide then
+--   vim.opt.guifont = { "FiraCode Nerd Font Mono:h13" }
+--   vim.g.neovide_scale_factor = 0.8 --from 0.3 Needs tobe bigger
+-- end
 
 

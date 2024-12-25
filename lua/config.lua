@@ -8,15 +8,15 @@
 --Set the main theme here
 return {
   -- colorscheme = "tokyodark",
-  -- colorscheme = "tokyo-dark-terminal",
+  colorscheme = "tokyo-dark-terminal",
   -- colorscheme = "base16-tokyodark",
   -- colorscheme = "tokyonight-night",
    -- colorscheme = "base16-3024",
   -- colorscheme = "tokyonight",
   -- colorscheme = "rose-pine",
   -- variant = "main",
-    colorscheme = "catppuccin",
-    variant = "mocha",
+    -- colorscheme = "catppuccin",
+    -- variant = "mocha",
   -- colorscheme = "kanagawa",
   -- variant = "dragon",
   -- TODO: SAVE SOME OF THESE PYWAL & WALLUST THEMES To be used with the rest of WALLUST OR PYWAL
@@ -26,7 +26,7 @@ return {
   -- colorscheme = "neopywal",
   -- variant = "dark",
   --
-  -- variant = "dark",
+  variant = "dark",
 	transparent = false,
   --[[TODO: Where do these other calls come from? ]]--
   --
