@@ -1,10 +1,10 @@
 -- Author: JJH
--- Date: Nov 27,2024
+-- Date: Dec 26,2024
 -- Edits: New DashBoard Configuration
 -- This is the new snacks dashboard config
 -- Dual pane
 --
---FIXME: This should be working 11-27-2024
+--FIXME: Added cmd dash for a keymap
 --Just copy the others over into new files and turn them OFF & ON
 --
 --
@@ -18,6 +18,8 @@
 return {"folke/snacks.nvim",
   opts = {
 dashboard = {
+
+      { cmd = "dash"},
   sections = {
     { section = "header" },
     {
@@ -44,7 +46,7 @@ dashboard = {
     },
     { section = "startup" },
   },
-      { cmd="dash"},
+      { cmd = "dash"},
 }, -- dash end
   }, -- opts end
   }-- END
