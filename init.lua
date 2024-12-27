@@ -40,7 +40,7 @@ vim.g.neovide_cursor_smooth_blink = true
 
 -- vim.g.neovide_cursor_vfx_mode = ""
 -- vim.g.neovide_cursor_vfx_mode = "railgun"
-vim.g.neovide_cursor_vfx_particle_phase = 1.5
+vim.g.neovide_cursor_vfx_particle_phase = 2.5
 vim.g.neovide_cursor_vfx_particle_curl = 1.0
 -- vim.g.neovide_cursor_vfx_mode = "torpedo"
 vim.g.neovide_cursor_vfx_mode = "pixiedust"

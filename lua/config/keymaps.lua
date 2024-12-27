@@ -13,13 +13,13 @@
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:Alpha<cr>", { desc = "Alpha_Home" })
 
 -- vim.keymap.set("n", "<leader>;", "<cmd>Snacks_Dashboard<cr>", { desc = "GoTo Home" })
-vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>Snacks.dashboard()<cr>", { desc = "Home" })
+vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>dash<cr>", { desc = "Home" })
 
 -- This also works fine
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:Alpha<cr>", { desc = "Alpha_Home" })
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>:lua Snacks.dashboard()<cr>", { desc = "HomePage" })
 --
-vim.api.nvim_set_keymap("n", "<leader>*", "<cmd>Snacks.dashboard<cr>", { desc = "HomeTest" })
+vim.api.nvim_set_keymap("n", "<leader>*", "<cmd>:dash<cr>", { desc = "HomeTest" })
 --
 -- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>"),
 --

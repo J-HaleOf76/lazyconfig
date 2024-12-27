@@ -34,7 +34,7 @@ return {
         -- sass = { enable = true, parsers = { css }, },-- Enable sass colors
         virtualtext = "■",
         -- Update color values even if the buffer is not focused
-        always_update = true,
+        always_update = false,
       },
     },
   },
