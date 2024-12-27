@@ -6,13 +6,19 @@ debug
 foo.*
 *.log
 data
-lua/Files&Themes_EXTRAS
-.vscode
-Removed-Plugins&Files
-lua/plugins/My_devfiles
-/spell/
-Colors_Notes.md
-Extras_NOTES.md
-VCS-snips-export_9-12-2023-
-config-notes.md
 
+# I'm from here down
+*.vscode
+lua/plugins/My_devfiles/
+lua/Files&Themes_EXTRAS/
+lua/plugins/Extras_NOTES
+lua/plugins/colors/Colors_Notes
+Removed-Plugins&Files/
+spell/
+config-notes.md
+.gitignore
+.neoconf.json
+lazy-lock.json
+lazyvim.json
+stylua.toml
+VCS-snips-export_9-12-2023-
