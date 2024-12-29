@@ -1,6 +1,10 @@
 --[[ This is where I set the colorscheme ]]--
+--Utils File
+-- 2 of 3 files needed for this to work. themer,config,colorscheme.
+--
 --TODO: Make a wallust theme and save.
 --
+  -- Rose-Pine Kanagawa Tokyo-Dark-Terminal TokyoNight-Night
 -- NeoPywal has several theme builtin and more that it can apply in the config.
 --
 --
@@ -19,8 +23,7 @@ return {
     -- variant = "mocha",
   -- colorscheme = "kanagawa",
   -- variant = "dragon",
-  -- TODO: SAVE SOME OF THESE PYWAL & WALLUST THEMES To be used with the rest of WALLUST OR PYWAL
-  -- Rose-Pine Kanagawa Tokyo-Dark-Terminal TokyoNight-Night
+
   --
   -- NeoPywal has other builtin themes
   -- colorscheme = "neopywal",
@@ -28,7 +31,6 @@ return {
   --
   variant = "dark",
 	transparent = false,
-  --[[TODO: Where do these other calls come from? ]]--
   --
 	-- filemanager = "neo-tree", -- supported: mini.files, oil, neo-tree
 	-- keymapper = "which-key", -- supported: mini.clue, which-key

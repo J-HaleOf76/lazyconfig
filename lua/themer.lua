@@ -1,17 +1,14 @@
 ---@diagnostic disable: duplicate-set-field
 --[[
---Author: JJH
---Date: Nov 28, 2024
+-- 1 of 3 files needed for this to work correctly. themer,config,colorscheme.
+--Author: Some guy on GitHub - Many thanks!
+--Date: Dec 28, 2024
 --Edits: USE the favs for selection of themes.
--- Tighten this up.
--- I can make another module just like favourites and put base16,neopywal in there and only
--- call it with a new keymap.
 --
--- - Base16 will still show up in the main colorschemes picker. uC
---  - It shows too many themes in the picker.
--- HACK: NO Just add keymap to the base16 config file.
 -- NOTE: In the favs function base16 is excluded from the results returned.
+--  - It shows too many themes in the picker.
 --  - But Not excluded from the normal keymap call for the colorschemes.
+-- - Base16 will still show up in the main colorschemes picker. uC
 --
 -- FIXME: This NO work with fzf-lua - This function make a call to telescope
 -- I fixed this by getting rid of fzf-lua And back to telescope

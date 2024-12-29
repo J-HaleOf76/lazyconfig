@@ -79,7 +79,7 @@
   "neovim-ayu": { "branch": "master", "commit": "37160699469d695486174fb863aae2f2a4c1f90f" },
   "nightfox.nvim": { "branch": "main", "commit": "7557f26defd093c4e9bc17f28b08403f706f5a44" },
   "noice.nvim": { "branch": "main", "commit": "eaed6cc9c06aa2013b5255349e4f26a6b17ab70f" },
-  "none-ls.nvim": { "branch": "main", "commit": "6f5473ae9e7feb0b40ca95b8ed92e85b42a3c71b" },
+  "none-ls.nvim": { "branch": "main", "commit": "02144ef2b86a816b5dec69783e311bb6feff7d82" },
   "nordic.nvim": { "branch": "main", "commit": "1ee4044077059b34eacd18d93613495a602c131f" },
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-base16": { "branch": "master", "commit": "6ac181b5733518040a33017dde654059cd771b7c" },

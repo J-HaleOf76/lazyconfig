@@ -1,23 +1,13 @@
 <!-- -- Author: John Hale -->
-<!-- -- Date: Dec 2023 -->
+<!-- -- Date: Dec 2024 -->
 
 # Configuration Notes For My NeoVim
-
-# DevNotes for LazyVim Configurations of Mine
 
 ## HelpTags from headings in markdown README's inside "lua/\*\*/"
 
 - Read HelpNotes.md
 - :help #'What To Look For'
-- I can make my own help notes system for whatever I need too
-
---NOTE: Macros Bellow - Line 80
-
-## Look inside of the other config files on how they made it work and copy
-
---NOTE: live-server
-
-## ' live-server ' " web-tools" " five-server " " browser-sync "
+- I can make my own help notes for whatever I need too
 
 [html,css,js]
 
@@ -89,14 +79,17 @@ window = {
 
 ### Macros
 
--- NOTE: macros
+--NOTE: macros
 
-'q' starts and stops recording
-Rerun my macro use " 3@w " - number of times to do the macro.And what macro to repeat
-**recording my commmands and reusing them**
+'q' starts and stops recording.
+Rerun my macro use " 3@w " - number of times to do the macro and what macro to repeat.
+<br>
+**Recording my commands and reusing them**
 
-Start recording with " q w " q = record- w = the register that I want it saved at.
-Make my edits and move the cursor to the correct position then hit " q " This q = quit
-Hiting a number then my register will run the command that many times. 3w will run it 3 times
+# Macros how to use
+
+- Start recording with " q w " q = record- w = the register that I want it saved at.
+- Make my edits and move the cursor to the correct position then hit " q " This q = quit.
+- Hiting a number then my register will run the command that many times. 3w will run it 3 times.
 
 --
