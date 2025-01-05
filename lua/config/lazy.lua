@@ -42,7 +42,7 @@ require("lazy").setup({
   },
   --NOTE: This might need removed - I added in the below 'dev' section
   -- Nov 18,2023
-  dev = { path = "~/Dev_NeoVim/", -- "~/projects"
+  dev = { path = "~/Dev_NeoVim", -- "~/projects"
   patterns = {"JJH"}, -- Use local instead -- Any plugin with this prefix will be used as local.
   -- fallback = false, --fall back to git when not installed
   fallback = true,

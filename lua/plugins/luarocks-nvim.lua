@@ -1,3 +1,9 @@
+if true then
+  return {}
+end
+
+-- Don't think I need this - cooked in now ?
+--
 return {
 {
   "vhyrro/luarocks.nvim",
@@ -5,9 +11,10 @@ return {
     opts = {
     -- rocks = { "fzy", "pathlib.nvim ~> 1.0" }, -- specifies a list of rocks to install
     -- luarocks_build_args = { "--with-lua=/my/path" }, -- extra options to pass to luarocks's configuration script
-     rocks = { "magick" },
+     -- rocks = { "magick" },
+      rocks = {"leafo/magick"},
   },
-  config = true,
+  -- config = true,
 }
 }
 

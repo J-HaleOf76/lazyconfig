@@ -16,9 +16,9 @@ end
 
 -- NeoVide only
 if vim.g.neovide then
- vim.o.guifont = "Source Code Pro:h13"
+ -- vim.o.guifont = "Source Code Pro:h13"
  -- vim.o.guifont = "Meslo Nerd Font:h13"
--- vim.opt.guifont = { "FiraCode Nerd Font Mono:h13" }
+vim.opt.guifont = { "FiraCode Nerd Font Mono:h13" }
 
 vim.g.neovide_padding_top = 0.15
 vim.g.neovide_padding_bottom = 0.15

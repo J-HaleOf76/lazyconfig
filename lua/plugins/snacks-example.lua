@@ -5,8 +5,11 @@ end
 -- Date: Nov 27,2024
 -- Edit: I want to use Snacks for the dashboard
 --
--- This I found on github
---   Just an example of how to get it to use a dashboard
+-- This is the way to use the preconfigured examples
+-- { "snacks.nvim",
+--    opts = {dashboard = { example = "github" },
+-- }
+--
 -- 
 -- Save this enable function
 -- enabled = function()

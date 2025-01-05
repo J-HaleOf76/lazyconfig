@@ -15,7 +15,8 @@
 
 
 
-return {"folke/snacks.nvim",
+return {"snacks.nvim",
+  -- {"folke/snacks.nvim",
   opts = {
 dashboard = {
 
