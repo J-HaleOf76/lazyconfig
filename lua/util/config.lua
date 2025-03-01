@@ -1,5 +1,3 @@
---[[ This is where I set the colorscheme ]]--
---Utils File
 -- 2 of 3 files needed for this to work. themer,config,colorscheme.
 --
 --TODO: Make a wallust theme and save.

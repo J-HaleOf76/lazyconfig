@@ -13,8 +13,11 @@ lua/plugins/My_devfiles/
 lua/Files&Themes_EXTRAS/
 lua/plugins/Extras_NOTES
 lua/plugins/colors/Colors_Notes
+lua/plugins/colors/.vscode/
 Removed-Plugins&Files/
 spell/
+util/
+
 config-notes.md
 .gitignore
 .neoconf.json
@@ -22,3 +25,5 @@ lazy-lock.json
 lazyvim.json
 stylua.toml
 VCS-snips-export_9-12-2023-
+.cache/
+.git/

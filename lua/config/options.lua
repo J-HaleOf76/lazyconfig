@@ -81,7 +81,7 @@ vim.g.maplocalleader = "\\"
 -- local opt = vim.opt
 
 -- opt.autowrite = true -- Enable auto write
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
+--  opt.clipboard = "unnamedplus" -- Sync with system clipboard
 -- opt.completeopt = "menu,menuone,noselect"
 -- opt.conceallevel = 3 -- Hide * markup for bold and italic
 -- opt.confirm = true -- Confirm to save changes before exiting modified buffer
@@ -112,7 +112,7 @@ opt.clipboard = "unnamedplus" -- Sync with system clipboard
 -- opt.smartindent = true -- Insert indents automatically
 -- opt.spelllang = { "en" }
 -- opt.splitbelow = true -- Put new windows below current
-opt.splitkeep = "screen"
+--  opt.splitkeep = "screen"
 -- opt.splitright = true -- Put new windows right of current
 -- opt.tabstop = 2 -- Number of spaces tabs count for
 -- opt.termguicolors = true -- True color support
@@ -134,13 +134,13 @@ opt.splitkeep = "screen"
 --   eob = " ",
 -- }
 
-if vim.fn.has("nvim-0.10") == 1 then
-  opt.smoothscroll = true
-end
+-- if vim.fn.has("nvim-0.10") == 1 then
+--  opt.smoothscroll = true
+-- end
 
 -- Folding
-vim.opt.foldlevel = 99
-vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
+--vim.opt.foldlevel = 99
+--vim.opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 
 -- Integrating Snacks
 -- if vim.fn.has("nvim-0.9.0") == 1 then

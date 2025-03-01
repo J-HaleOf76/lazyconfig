@@ -1,13 +1,18 @@
+if true then return{} end
+--
 -- Author: JJH
--- Date: Dec 26,2024
+-- Date: Feb 20,2024
 -- Edits: New DashBoard Configuration
 -- This is the new snacks dashboard config
 -- Dual pane
 --
---FIXME: Added cmd dash for a keymap
---Just copy the others over into new files and turn them OFF & ON
+--TODO: add the weather at the bottom or besides the new header.
+--Test Test Test
 --
 --
+--FIX: This wont work... width pane_gap ... 
+
+
 -- enabled = function()
 --   return Snacks.git.get_root() ~= nil
 -- end,
@@ -15,14 +20,33 @@
 
 
 
-return {"snacks.nvim",
-  -- {"folke/snacks.nvim",
+return {"folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   opts = {
 dashboard = {
+ -- section = {
+  width = 5,
+  pane_gap = 2,
 
-      { cmd = "dash"},
-  sections = {
+preset = {
+        header = table.concat({
+            [[   █  █   ]],
+            [[   █ ██   ]],
+            [[   ████   ]],
+            [[   ██ ███   ]],
+            [[   █  █   ]],
+            [[             ]],
+            [[ n e o v i m ]],
+        }, '\n'),
+
+
+
+--},
+},
+sections = {
     { section = "header" },
+
     {
       pane = 2,
       section = "terminal",
@@ -41,6 +65,7 @@ dashboard = {
       enabled = vim.fn.isdirectory(".git") == 1,
       cmd = "hub status --short --branch --renames",
       height = 5,
+      width = 4,
       padding = 1,
       ttl = 5 * 60,
       indent = 3,

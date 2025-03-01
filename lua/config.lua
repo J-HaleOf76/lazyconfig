@@ -11,13 +11,14 @@
 --Set the main theme here
 return {
   -- colorscheme = "tokyodark",
-  colorscheme = "tokyo-dark-terminal",
-  -- colorscheme = "base16-tokyodark",
+  -- colorscheme = "tokyo-dark-terminal",
+  colorscheme = "base16-tokyodark",
   -- colorscheme = "tokyonight-night",
    -- colorscheme = "base16-3024",
   -- colorscheme = "tokyonight",
-  -- colorscheme = "rose-pine",
-  -- variant = "main",
+  --  colorscheme = "~/john/Projects/tokyonight.nvim/extras/tokyonight_night",
+   -- colorscheme = "rose-pine",
+   -- variant = "main",
     -- colorscheme = "catppuccin",
     -- variant = "mocha",
   -- colorscheme = "kanagawa",
@@ -33,7 +34,7 @@ return {
 	-- filemanager = "neo-tree", -- supported: mini.files, oil, neo-tree
 	-- keymapper = "which-key", -- supported: mini.clue, which-key
 	-- journal_dir = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
-	notes = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
+	notes_dir = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
 	-- startup = {
 	-- 	show_diagnostics = true,
 	-- 	show_git_blame = false,

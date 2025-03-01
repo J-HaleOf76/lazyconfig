@@ -15,6 +15,15 @@ end
 -- enabled = function()
 --   return Snacks.git.get_root() ~= nil
 -- end,
+--  header = table.concat({
+        --   [[   █  █   ]],
+        --   [[   █ ██   ]],
+        --   [[   ████   ]],
+        --   [[   ██ ███   ]],
+        --   [[   █  █   ]],
+        --   [[             ]],
+        --   [[ n e o v i m ]],
+        -- }, '\n'),
 --
 return {
   "folke/snacks.nvim",
