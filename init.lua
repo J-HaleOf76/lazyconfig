@@ -30,7 +30,8 @@ vim.g.neovide_padding_right = 0.15
 vim.g.neovide_padding_left = 0.15
 
 vim.g.neovide_scale_factor = 0.8
-vim.g.neovide_transparency = 1.0
+-- vim.g.neovide_transparency = 1.0
+vim.g.neovide_opacity = 1.0
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_theme = 'dark'  --'auto'
 vim.g.neovide_confirm_quit = true

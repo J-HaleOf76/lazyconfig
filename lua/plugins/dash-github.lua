@@ -7,6 +7,33 @@ end
 return { "folke/snacks.nvim",
   opts = {
     dashboard = {
+      width = 5,
+      pane_gap = 4,
+
+      autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
+      preset = {
+
+        header = table.concat({
+            [[   █  █   ]],
+            [[   █ ██   ]],
+            [[   ████   ]],
+            [[   ██ ███   ]],
+            [[   █  █   ]],
+            [[             ]],
+            [[ n e o v i m ]],
+        }, '\n'),
+      },
+formats = {
+          header = {
+            align = "left",
+          },
+        },
+        sections = {
+          {
+            section = "header",
+            padding = 2,
+          },
+      },
 {
   sections = {
     { section = "header" },
@@ -58,6 +85,8 @@ return { "folke/snacks.nvim",
         }, cmd)
       end, cmds)
     end,
+          -- Adjust for home.
+ { section = "terminal", cmd = "curl -s 'wttr.in/?0'"},
     { section = "startup" },
   },
 },

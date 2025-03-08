@@ -10,9 +10,13 @@
 
 --Set the main theme here
 return {
-  -- colorscheme = "tokyodark",
-  -- colorscheme = "tokyo-dark-terminal",
-  colorscheme = "base16-tokyodark",
+  -- colorscheme = "base16-tokyodark",
+  -- colorscheme = "base16-tokyodark-terminal",
+  --
+  colorscheme = "tokyo-dark-terminal",
+  -- colorscheme = "base16-tokyo-night-dark",
+  --
+  -- colorscheme = "base16-tokyodark",
   -- colorscheme = "tokyonight-night",
    -- colorscheme = "base16-3024",
   -- colorscheme = "tokyonight",
@@ -31,9 +35,7 @@ return {
   variant = "dark",
 	transparent = false,
   --
-	-- filemanager = "neo-tree", -- supported: mini.files, oil, neo-tree
-	-- keymapper = "which-key", -- supported: mini.clue, which-key
-	-- journal_dir = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
+  -- fm = "yazi",
 	notes_dir = os.getenv("HOME") .. "/MEGASync/NOTES/dailies/",
 	-- startup = {
 	-- 	show_diagnostics = true,

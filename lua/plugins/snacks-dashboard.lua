@@ -1,8 +1,10 @@
-if true then return{} end
+-- if true then return{} end
 --
 -- Author: JJH
--- Date: Feb 20,2024
+-- Date: March 8,2025
 -- Edits: New DashBoard Configuration
+-- I should be able to break up the snacks config into multiple files.
+-- 
 -- This is the new snacks dashboard config
 -- Dual pane
 --
@@ -21,13 +23,13 @@ if true then return{} end
 
 
 return {"folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
+  -- priority = 1000,
+  -- lazy = false,
   opts = {
 dashboard = {
- -- section = {
-  width = 5,
-  pane_gap = 2,
+      enabled = true,
+  -- width = 5,
+  -- pane_gap = 2,
 
 preset = {
         header = table.concat({
@@ -42,10 +44,23 @@ preset = {
 
 
 
---},
-},
+},-- header preset end
+
 sections = {
     { section = "header" },
+        -- I want these 2 on the same line
+        -- {
+        --   -- pane = 2,
+        --   section = "terminal",
+        --   cmd = "curl -s 'wttr.in/?0FQ'",
+        --   padding = 1,
+        --   -- width = 2,
+        --   -- height = 5,
+        --   -- ident = 2,
+        --   -- title = "Weather",
+        --   -- ttl = 5 * 60,
+        --
+        -- },
 
     {
       pane = 2,
@@ -70,9 +85,22 @@ sections = {
       ttl = 5 * 60,
       indent = 3,
     },
+        -- { section = "weather" },
+
+        {
+          pane = 2,
+          section = "terminal",
+          cmd = "curl -s 'wttr.in/43953?0FQ'",
+          padding = 1,
+          -- width = 2,
+          -- height = 5,
+          -- ident = 2,
+          -- title = "Weather",
+          -- ttl = 5 * 60,
+
+        },
     { section = "startup" },
-  },
-      { cmd = "dash"},
+  },--sections
 }, -- dash end
   }, -- opts end
   }-- END

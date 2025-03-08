@@ -19,7 +19,7 @@ return{
       max = 30, -- 40 -- maximum number of drops on the screen
       interval = 150, -- every 150ms we update the drops
       screensaver = 1000 * 60 * 15, -- show after 5 minutes. Set to false, to disable
-      filetypes = { "dashboard", "alpha", "starter" }, -- will enable/disable automatically for the following filetypes
+      filetypes = { "snacks_dashboard", "dashboard", "alpha", "starter" }, -- will enable/disable automatically for the following filetypes
       winblend = 100,
     },
 
